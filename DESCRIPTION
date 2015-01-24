@@ -1,0 +1,15 @@
+Package: or
+Type: Package
+Title: Object Recognition
+Version: 0.1.1
+Date: 2013-03-18
+Author: Al-Ahmadgaid B. Asaad <alstated@gmail.com>
+Maintainer: Al-Ahmadgaid B. Asaad <alstated@gmail.com>
+Description: A package for or.
+License: GPL-2
+LazyData: true
+LinkingTo: Rcpp
+Depends:
+    Rcpp (>= 0.10.6), EBImage (>= 4.8.1), reshape2 (>= 1.4.1)
+Imports:
+    Rcpp, EBImage, reshape2
