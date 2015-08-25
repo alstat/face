@@ -2,40 +2,32 @@
 % Please edit documentation in R/recognize.R
 \name{recognize}
 \alias{recognize}
-\title{Object Recognition}
+\title{Recognize Image (Human Face)}
 \usage{
-recognize(x, y, k = 1)
+recognize(x, y, rule = "simple f-share", display = TRUE)
 }
 \arguments{
-\item{x}{a data frame consisting the suitability scores of a given characteristics
-(terrain, soil, water and temperature) for a
-given crop (e.g. coconut, cassava, etc.);}
+\item{x}{string input; image file input to be recognize.}
 
-\item{method}{the method for computing the overall suitability, which includes the
-\code{"minimum"}, \code{"maximum"}, \code{"sum"}, \code{"product"},
-\code{"average"}, \code{"exponential"} and \code{"gamma"}. If \code{NULL},
-\code{"minimum"} is used.}
+\item{y}{model supervised on learning from the training dataset.}
 
-\item{interval}{if \code{NULL}, the interval used are the following: 0-25% (Not
-suitable, N), 25%-50% (Marginally Suitable, S3), 50%-75% (Moderately Suitable, S2), and
-75%-100% (Highly Suitable, S1). But users can assign a custom intervals by specificying
-the values of the end points of the intervals.}
+\item{rule}{string input; stopping rule for choosing number of principal components.
+Options are: \code{'simple f-share'} for simple fair-share; \code{'broken stick'}; and,
+\code{'rel-broken stick'} for relative broken stick stopping rule.}
 
-\item{output}{the output to be returned, either the scores or class. If \code{NULL},
-       both are returned.}
+\item{display}{displays the input image, and the corresponding output image --
+       as recognized by the model.}
 }
 \description{
-This function uses PCA to compute the eigenfaces and recognizes the data.
+Function for recognizing the image using the model trained from the data.
 }
 \examples{
-library(or)
+library(fr)
 
-rawData <- list()
-for (i in 1:101) {
-  rawData[[i]] <- melt(t(readImage(paste("~/Documents/Data/faces94/", i, ".jpg", sep = ""))[,,1]))[-c(1,2)]
-}
+# Import all images in the directory "data/jaffe/"
+imgData <- importImges("~/Documents/Data/jaffe/", display = FALSE)
 
-face_mat <- matrix(unlist(rawData), ncol = 101)
-recognize("~/Documents/Data/faces94/42.jpg", face_mat)
+model <- learn(imgData)
+a <- recognize("~/Documents/Data/jaffe/KA.FE3.47.tiff", criterion, display = TRUE, rule = "rel-broken stick")
 }
 

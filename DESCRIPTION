@@ -1,15 +1,16 @@
-Package: or
+Package: frpca
 Type: Package
-Title: Object Recognition
+Title: Face Recognition using Principal Component Analysis
 Version: 0.1.1
-Date: 2013-03-18
+Date: 2015-01-25
 Author: Al-Ahmadgaid B. Asaad <alstated@gmail.com>
 Maintainer: Al-Ahmadgaid B. Asaad <alstated@gmail.com>
-Description: A package for or.
+Contributor: Dr. Joselito C. Magadia <j_magadia@yahoo.com>
+Description: A package for face recognition using principal component analysis.
 License: GPL-2
 LazyData: true
-LinkingTo: Rcpp
+LinkingTo: Rcpp, RcppArmadillo
 Depends:
-    Rcpp (>= 0.10.6), EBImage (>= 4.8.1), reshape2 (>= 1.4.1)
+    EBImage (>= 4.8.1), reshape2 (>= 1.4.1), lattice (>= 0.20-31)
 Imports:
-    Rcpp, EBImage, reshape2
+    EBImage, reshape2, lattice
