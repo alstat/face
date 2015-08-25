@@ -2,11 +2,6 @@
 
 using namespace Rcpp;
 
-// Below is a simple example of exporting a C++ function to R. You can
-// source this function into an R session using the Rcpp::sourceCpp 
-// function (or via the Source button on the editor toolbar)
-// x - err
-
 // [[Rcpp::export]]
 NumericVector getNorm(NumericMatrix x) {
   int x_col = x.ncol();

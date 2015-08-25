@@ -21,14 +21,11 @@
 #' model <- learn(imgData)
 #' a <- recognize("~/Documents/Data/jaffe/KA.FE3.47.tiff", criterion, display = TRUE, rule = "rel-broken stick")
 recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
-  x <- "~/Documents/Data/jaffe/KA.FE3.47.tiff"
-  y <- model; rule <- "simple f-share"
   if (class(y) != 'learn') stop ("y is of class 'learn'.")
   if (class(x) != 'character') stop ("x should be string.")
   
   # Read the input image
   in_img <- readImage(as.character(x))
-  
   ydat <- y[[2L]] # Extract the input data of all images
   # Conditions for the dimensions of the image
   if (length(dim(in_img)) == 3L) {
@@ -44,7 +41,7 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
     }
   }
   
-  # Extract the columnt pixel values of the input image
+  # Extract the column pixel values of the input image
   if (length(dim(in_img)) == 3L) {
     in_img1 <- melt(t(in_img[,, 1L]))[-c(1L, 2L)] 
   } else if (length(dim(in_img)) == 2L) {
@@ -54,7 +51,7 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
   # Generate the image using the first k images
   imgH <- face_mu <- y[[3L]]; pc <- y[[1L]]
   if (is.null(rule)) {
-    imgH <- imgH + pc$scores %*% loadings(pc)
+    imgH <- imgH + pc$scores %*% t(loadings(pc))
   } else if (!is.null(rule)) {
     # Extract the maximum number of PCs for the image
     if (rule == "rel-broken stick") {
@@ -64,7 +61,6 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
     } else if (rule == "broken stick") {
       k <- max(brStick(pc$sdev ^ 2L)[["Use PC(s):"]])
     }
-    
     if (k == dim(ydat[[1L]])[2L]) {
       imgH <- imgH + pc$scores %*% loadings(pc)
     } else {
@@ -77,7 +73,7 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
   # Extract the error by subtracting the fitted image to all image data
   err <- as.matrix(as.data.frame(imgH) - as.matrix(in_img1))
   
-  # And fors each error obtain the norm/length of the vector
+  # And for each error obtain the norm/length of the vector
   out <- getNorm(err)
   
   # The one with the smallest norm will tell us the closest image
@@ -85,7 +81,6 @@ recognize <- function(x, y, rule = "simple f-share", display = TRUE) {
   img_mat <- array(0L, c(dim(in_img)[1L:2L], 2L))
   img_mat[,,] <- c(matrix(in_img1[,1L], ncol = dim(in_img)[2L], byrow = TRUE),
                    matrix(ydat[[1L]][, min_err], ncol = dim(in_img)[2L], byrow = TRUE))
-  
   if (display == TRUE) {
     display(img_mat[,,1L:2L], all = T, method = "r", title = c("Input", "Recognized as"))
   } 

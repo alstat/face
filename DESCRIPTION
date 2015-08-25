@@ -1,4 +1,4 @@
-Package: frpca
+Package: fr
 Type: Package
 Title: Face Recognition using Principal Component Analysis
 Version: 0.1.1
