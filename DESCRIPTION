@@ -1,12 +1,12 @@
-Package: fr
+Package: fpr
 Type: Package
-Title: Face Recognition using Principal Component Analysis
+Title: Face and Pattern Recognition with PCA and Neural Nets.
 Version: 0.1.1
 Date: 2015-01-25
 Author: Al-Ahmadgaid B. Asaad <alstated@gmail.com>
 Maintainer: Al-Ahmadgaid B. Asaad <alstated@gmail.com>
 Contributor: Dr. Joselito C. Magadia <j_magadia@yahoo.com>
-Description: A package for face recognition using principal component analysis.
+Description: R package for face and pattern recognition using techniques such as principal componanent analysis and neural networks.
 License: GPL-2
 LazyData: true
 LinkingTo: Rcpp, RcppArmadillo
