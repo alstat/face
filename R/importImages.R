@@ -36,6 +36,7 @@ importImages <- function (path = ".", display = FALSE) {
   }
   nrow <- nrow(numData[[1]])
   ncol <- length(numData)
+  # Matrix of faces, each column correspond to face vector
   rawMat <- mat_of_faces(numData, nrow, ncol)
   
   d <- dim(rawData[[1L]])

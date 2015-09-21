@@ -2,22 +2,22 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 brLoop <- function(x) {
-    .Call('fr_brLoop', PACKAGE = 'fr', x)
+    .Call('fpr_brLoop', PACKAGE = 'fpr', x)
 }
 
 getNorm <- function(x) {
-    .Call('fr_getNorm', PACKAGE = 'fr', x)
+    .Call('fpr_getNorm', PACKAGE = 'fpr', x)
 }
 
 mat_of_faces <- function(x, nrow, ncol) {
-    .Call('fr_mat_of_faces', PACKAGE = 'fr', x, nrow, ncol)
+    .Call('fpr_mat_of_faces', PACKAGE = 'fpr', x, nrow, ncol)
 }
 
 mat_to_image <- function(x, dim) {
-    .Call('fr_mat_to_image', PACKAGE = 'fr', x, dim)
+    .Call('fpr_mat_to_image', PACKAGE = 'fpr', x, dim)
 }
 
 rbrLoop <- function(x) {
-    .Call('fr_rbrLoop', PACKAGE = 'fr', x)
+    .Call('fpr_rbrLoop', PACKAGE = 'fpr', x)
 }
 

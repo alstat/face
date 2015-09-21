@@ -1,11 +1,12 @@
 #' Face Recognition using Principal Component Analysis Package
 #' 
 #' @description
-#' This package uses principal component analysis for face recognition.
+#' R package for face and pattern recognition using techniques such as
+#' principal componanent analysis and neural networks.
 #' 
 #' @author Al-Ahmadgaid B. Asaad
 #' @import Rcpp EBImage reshape2 lattice
 #' @docType package
-#' @useDynLib fr
-#' @name fr-package
+#' @useDynLib fpr
+#' @name fpr-package
 NULL
