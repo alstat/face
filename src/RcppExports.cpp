@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // brLoop
 NumericMatrix brLoop(NumericVector x);
-RcppExport SEXP fpr_brLoop(SEXP xSEXP) {
+RcppExport SEXP face_brLoop(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
@@ -19,7 +19,7 @@ END_RCPP
 }
 // getNorm
 NumericVector getNorm(NumericMatrix x);
-RcppExport SEXP fpr_getNorm(SEXP xSEXP) {
+RcppExport SEXP face_getNorm(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
@@ -30,7 +30,7 @@ END_RCPP
 }
 // mat_of_faces
 arma::Mat<double> mat_of_faces(List x, int nrow, int ncol);
-RcppExport SEXP fpr_mat_of_faces(SEXP xSEXP, SEXP nrowSEXP, SEXP ncolSEXP) {
+RcppExport SEXP face_mat_of_faces(SEXP xSEXP, SEXP nrowSEXP, SEXP ncolSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
@@ -43,7 +43,7 @@ END_RCPP
 }
 // mat_to_image
 arma::Cube<double> mat_to_image(NumericMatrix x, NumericVector dim);
-RcppExport SEXP fpr_mat_to_image(SEXP xSEXP, SEXP dimSEXP) {
+RcppExport SEXP face_mat_to_image(SEXP xSEXP, SEXP dimSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
@@ -55,7 +55,7 @@ END_RCPP
 }
 // rbrLoop
 NumericMatrix rbrLoop(NumericVector x);
-RcppExport SEXP fpr_rbrLoop(SEXP xSEXP) {
+RcppExport SEXP face_rbrLoop(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;

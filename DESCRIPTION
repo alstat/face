@@ -1,4 +1,4 @@
-Package: fpr
+Package: face
 Type: Package
 Title: Face and Pattern Recognition with PCA and Neural Nets.
 Version: 0.1.1
