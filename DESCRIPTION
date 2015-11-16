@@ -1,6 +1,6 @@
 Package: face
 Type: Package
-Title: Face and Pattern Recognition with PCA and Neural Nets.
+Title: Face Recognition with PCA.
 Version: 0.1.1
 Date: 2015-01-25
 Author: Al-Ahmadgaid B. Asaad <alstated@gmail.com>
